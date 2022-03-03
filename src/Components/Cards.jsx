@@ -27,6 +27,12 @@ const Cards = (props) => {
 		return props.like({ operation: 'POP', data: id });
 	};
 
+	const cardClickHandler = (salt) => {
+		let data = props.posts.filter((post) => post.login.salt === salt);
+		window.localStorage.setItem('arr', JSON.stringify(data));
+		window.location.pathname = `/info/${salt}`;
+	};
+
 	const cards = () => {
 		if (props.posts && props.posts.length > 0) {
 			return props.posts.map((card) => {
@@ -37,6 +43,7 @@ const Cards = (props) => {
 								src={require('../Images/matthew.png')}
 								wrapped
 								ui={false}
+								onClick={(e) => cardClickHandler(card.login.salt)}
 							/>
 							<Card.Content>
 								<Card.Header>

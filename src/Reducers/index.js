@@ -27,6 +27,7 @@ const like = (state = [], action) => {
 	}
 	return state;
 };
+
 export default combineReducers({
 	posts: getPosts,
 	gridCount,
