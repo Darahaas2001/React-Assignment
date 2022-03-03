@@ -52,7 +52,7 @@ const Cards = (props) => {
 								</a>
 
 								<Button
-									color={props.likes.includes(card.login.salt) ? 'red' : ''}
+									color={props.likes.includes(card.login.salt) ? 'red' : 'grey'}
 									floated="right"
 									id={card.login.salt}
 									onClick={(e) => clickHandler(e.target.id)}
